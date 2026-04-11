@@ -20,5 +20,5 @@
   "devDependencies": {
     "typescript": "^6.0.2"
   },
-  "type": "commonjs"
+  "type": "module"
 }
