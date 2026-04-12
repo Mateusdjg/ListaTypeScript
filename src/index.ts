@@ -12,6 +12,9 @@ document.getElementById("btnEx4")?.addEventListener("click", exercicio4)
 // EXERCÍCIOS REPETIÇÃO
 import { exercicio1r } from "./repeticao/exercicio1r.js";
 import { exercicio2r } from "./repeticao/exercicio2r.js";
+import { exercicio3r } from "./repeticao/exercicio3r.js";
+
 
 document.getElementById("btnExr1")?.addEventListener("click", exercicio1r)
 document.getElementById("btnExr2")?.addEventListener("click", exercicio2r)
+document.getElementById("btnExr3")?.addEventListener("click", exercicio3r)
