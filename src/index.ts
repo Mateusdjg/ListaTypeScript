@@ -1,3 +1,4 @@
+// EXERCÍCIOS CONDICIONAL
 import { exercicio4 } from "./condicional/exercicio4.js";
 import { exercicio3 } from "./condicional/exercicio3.js";
 import { exercicio2 } from "./condicional/exercicio2.js";
@@ -7,3 +8,10 @@ document.getElementById("btnEx1")?.addEventListener("click", exercicio1)
 document.getElementById("btnEx2")?.addEventListener("click", exercicio2)
 document.getElementById("btnEx3")?.addEventListener("click", exercicio3)
 document.getElementById("btnEx4")?.addEventListener("click", exercicio4)
+
+// EXERCÍCIOS REPETIÇÃO
+import { exercicio1r } from "./repeticao/exercicio1r.js";
+import { exercicio2r } from "./repeticao/exercicio2r.js";
+
+document.getElementById("btnExr1")?.addEventListener("click", exercicio1r)
+document.getElementById("btnExr2")?.addEventListener("click", exercicio2r)
