@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(to right, rgb(81, 0, 255), rgb(105, 2, 105), rgb(51, 3, 91));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+}
+button:hover{
+    width: 125px;
+    height: 50px;
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+
+    border-radius: 50px;
+    border: none;
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+    
+    padding: 10px 20px;
+    border-radius: 20px;
+    transform: scale(0.9);
+    transition: transform 0.2s; 
+}
