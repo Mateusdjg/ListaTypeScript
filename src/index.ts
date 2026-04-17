@@ -13,6 +13,7 @@ document.getElementById("btnEx4")?.addEventListener("click", exercicio4)
 import { exercicio1r } from "./repeticao/exercicio1r.js";
 import { exercicio2r } from "./repeticao/exercicio2r.js";
 import { exercicio3r } from "./repeticao/exercicio3r.js";
+import { exercicio4r } from "./condicional/exercicio4r.js";
 
 
 document.getElementById("btnExr1")?.addEventListener("click", exercicio1r)
