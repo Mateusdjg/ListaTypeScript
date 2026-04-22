@@ -25,5 +25,9 @@ document.getElementById("btnExr5")?.addEventListener("click", exercicio5r)
 
 // EXERCÍCIOS FUNÇÃO
 import { exerciciof1 } from "./funcao/exerciciof1.js";
+import { exerciciof2 } from "./funcao/exerciciof2.js";
+import { exerciciof3 } from "./funcao/exerciciof3.js";
 
 document.getElementById("btnExf1")?.addEventListener("click", exerciciof1)
+document.getElementById("btnExf2")?.addEventListener("click", exerciciof2)
+document.getElementById("btnExf3")?.addEventListener("click", exerciciof3)

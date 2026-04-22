@@ -13,3 +13,33 @@
 // o Se status_alerta for True, imprime &quot;ALERTA: Temperatura fora da faixa ideal!&quot;.
 // o Se status_alerta for False, imprime &quot;Temperatura dentro da faixa normal.&quot;.
 
+export function exerciciof2():void{
+    function ler_temperatura():number{
+        let temperatura:number = Number(prompt("Informe a temperatura: "))
+        return temperatura
+    }
+
+    function verificar_alerta_temperatura(funcaoTem:number):boolean{
+        if(funcaoTem < 10 || funcaoTem > 30){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+
+    function emitir_mensagem_alerta(verificar_alerta_temperatura:boolean):void{
+        if(verificar_alerta_temperatura == true){
+            console.log("ALERTA: Temperatura fora da faixa ideal!")
+        }
+        else if(verificar_alerta_temperatura == false){
+            console.log("Temperatura dentro da faixa normal")
+        }
+    }
+
+
+    let funcaoTem:number = ler_temperatura()
+    //verificar_alerta_temperatura(funcaoTem)
+    let funcaoVerifar:boolean = verificar_alerta_temperatura(funcaoTem)
+    emitir_mensagem_alerta(funcaoVerifar)
+}
