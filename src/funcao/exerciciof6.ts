@@ -14,12 +14,57 @@
 // Imprima na tela as informações, dispostas conforme o exemplo abaixo. No exemplo o valor da hora
 // é R$15,00 e a quantidade de horas é 220.
 // Exemplo: Salário Bruto: (15 * 220)       : R$ 3300,00
-//   (-) IR (15%)                      : R$  495,00  
-//   (-) INSS (10%)                  : R$  330,00
-//   (-) SINDICATO (3%)                  : R$   99,00
-//   (-) V. ALIMENTAÇÃO (8%)              : R$  264,00
-//   (-) V. TRANSPORTE (6%)               : R$  198,00
-//   FGTS (11%)                       : R$  121,00
-//   Total de descontos               : R$  1386,00
-//   Salário Líquido                 : R$  1914,00
+//   (-) IR (15%)                           : R$  495,00  
+//   (-) INSS (10%)                         : R$  330,00
+//   (-) SINDICATO (3%)                     : R$   99,00
+//   (-) V. ALIMENTAÇÃO (8%)                : R$  264,00
+//   (-) V. TRANSPORTE (6%)                 : R$  198,00
+//   FGTS (11%)                             : R$  121,00
+//   Total de descontos                     : R$  1386,00
+//   Salário Líquido                        : R$  1914,00
 
+export function exerciciof6():void{
+    let valorHora:number, quantidadeHorasTrabalhadaMes:number
+
+    function CalculodescontoIR(salarioBruto:number):number{
+        if(salarioBruto <= 2428.80){
+            return 0
+        }
+        else if(salarioBruto >= 2428.81 && salarioBruto <= 2826.65){
+            return 0.075
+        }
+        else if(salarioBruto >= 2826.66 && salarioBruto <= 3751.05){
+            return 0.15
+        }
+        else if(salarioBruto >= 3751.06 && salarioBruto <= 4664.68){
+            return 0.225
+        }
+        else{
+            return 0.275
+        }
+    }
+    function calculos(valorHora:number, quantidadeHorasTrabalhadaMes:number): void{
+        let salarioBruto:number = valorHora * quantidadeHorasTrabalhadaMes
+
+        let funDescostoIr:number = CalculodescontoIR(salarioBruto)
+
+        let descontoIR:number = salarioBruto * funDescostoIr
+        let descontoINSS:number = salarioBruto * 0.10
+        let descontoSindicato:number = salarioBruto * 0.03
+        let descontoAlimentacao:number = salarioBruto * 0.08
+        let descontoTransporte:number = salarioBruto * 0.06
+        let descontoFGTS:number = salarioBruto * 0.11
+
+        let totalDesconto:number = descontoIR + descontoINSS + descontoSindicato + descontoAlimentacao + descontoTransporte + descontoFGTS
+        let salarioLiquido:number = salarioBruto - totalDesconto
+
+        console.log(`==== FOLHA DE PAGAMENTO ====`)
+        console.log(`Salário Bruto: ${salarioBruto.toFixed(2)}\n(-) IR (${funDescostoIr.toFixed(2)})               : R$ ${descontoIR.toFixed(2)}\n(-) INSS (10%)              : R$ ${descontoINSS.toFixed(2)}\n(-) SINDICATO (3%)          : R$ ${descontoSindicato.toFixed(2)}\n(-) V. ALIMENTAÇÃO (8%)     : R$ ${descontoAlimentacao.toFixed(2)} \n(-) V.TRANSPORTE (6%)       : R$ ${descontoTransporte.toFixed(2)}\nFGTS (11%)                  : R$ ${descontoFGTS.toFixed(2)}\nTotal de descontos          : R$ ${totalDesconto.toFixed(2)}\nSálario Líquido             : R$ ${salarioLiquido.toFixed(2)}`)
+
+    }
+
+    valorHora = Number(prompt("Informe quanto você ganha por hora: "))
+    quantidadeHorasTrabalhadaMes = Number(prompt("informe a quantidade de Horas Trabalhadas no mês: "))
+
+    calculos(valorHora, quantidadeHorasTrabalhadaMes)
+}

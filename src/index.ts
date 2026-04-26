@@ -29,12 +29,16 @@ import { exerciciof2 } from "./funcao/exerciciof2.js";
 import { exerciciof3 } from "./funcao/exerciciof3.js";
 import { exerciciof4 } from "./funcao/exerciciof4.js";
 import { exerciciof5 } from "./funcao/exerciciof5.js";
+import { exerciciof6 } from "./funcao/exerciciof6.js";
+import { exerciciof7 } from "./funcao/exerciciof7.js";
 
 document.getElementById("btnExf1")?.addEventListener("click", exerciciof1)
 document.getElementById("btnExf2")?.addEventListener("click", exerciciof2)
 document.getElementById("btnExf3")?.addEventListener("click", exerciciof3)
 document.getElementById("btnExf4")?.addEventListener("click", exerciciof4)
 document.getElementById("btnExf5")?.addEventListener("click", exerciciof5)
+document.getElementById("btnExf6")?.addEventListener("click", exerciciof6)
+document.getElementById("btnExf7")?.addEventListener("click", exerciciof7)
 
 // EXERCÍCIOS ARRAYS
 import { exercicioa1 } from "./array/exercicioa1.js";

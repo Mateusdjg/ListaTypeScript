@@ -7,4 +7,3 @@
 //  ● Permitir que o usuário apresente quantos itens há na lista.
 //  ● Permitir que o usuário remova itens da lista.
 
-    
