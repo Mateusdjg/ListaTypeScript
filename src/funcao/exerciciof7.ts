@@ -12,7 +12,7 @@ export function exerciciof7():void{
     }
     function funcao2(consumo:number,capacidadeTotalTanque:number ):any{
         let percorreTanqueCheio: number = capacidadeTotalTanque * consumo
-        console.log(`O carro percorre com o tanque cheio: ${percorreTanqueCheio}`)
+        console.log(`O carro percorre com o tanque cheio: ${percorreTanqueCheio} Km`)
     }
 
     distanciaPercorrida = Number(prompt("Informe a distância percorrida em Km: "))
