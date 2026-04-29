@@ -31,6 +31,9 @@ import { exerciciof4 } from "./funcao/exerciciof4.js";
 import { exerciciof5 } from "./funcao/exerciciof5.js";
 import { exerciciof6 } from "./funcao/exerciciof6.js";
 import { exerciciof7 } from "./funcao/exerciciof7.js";
+import { exerciciof8 } from "./funcao/exerciciof8.js";
+import { exerciciof9 } from "./funcao/exerciciof9.js";
+import { exerciciof10 } from "./funcao/exerciciosf10.js";
 
 document.getElementById("btnExf1")?.addEventListener("click", exerciciof1)
 document.getElementById("btnExf2")?.addEventListener("click", exerciciof2)
@@ -39,10 +42,15 @@ document.getElementById("btnExf4")?.addEventListener("click", exerciciof4)
 document.getElementById("btnExf5")?.addEventListener("click", exerciciof5)
 document.getElementById("btnExf6")?.addEventListener("click", exerciciof6)
 document.getElementById("btnExf7")?.addEventListener("click", exerciciof7)
+document.getElementById("btnExf8")?.addEventListener("click", exerciciof8)
+document.getElementById("btnExf9")?.addEventListener("click", exerciciof9)
+document.getElementById("btnExf10")?.addEventListener("click", exerciciof10)
 
 // EXERCÍCIOS ARRAYS
 import { exercicioa1 } from "./array/exercicioa1.js";
 import { exercicioa2 } from "./array/execicioa2.js";
+import { exercicioa3 } from "./array/exercicioa3.js";
 
 document.getElementById("btnExa1")?.addEventListener("click", exercicioa1)
 document.getElementById("btnExa2")?.addEventListener("click", exercicioa2)
+document.getElementById("btnExa3")?.addEventListener("click", exercicioa3)
