@@ -48,9 +48,13 @@ document.getElementById("btnExf10")?.addEventListener("click", exerciciof10)
 
 // EXERCÍCIOS ARRAYS
 import { exercicioa1 } from "./array/exercicioa1.js";
-import { exercicioa2 } from "./array/execicioa2.js";
+import { exercicioa2 } from "./array/exercicioa2.js";
 import { exercicioa3 } from "./array/exercicioa3.js";
+import { exercicioa4 } from "./array/exercicioa4.js";
+import { exercicioa5 } from "./array/exercicioa5.js";
 
 document.getElementById("btnExa1")?.addEventListener("click", exercicioa1)
 document.getElementById("btnExa2")?.addEventListener("click", exercicioa2)
 document.getElementById("btnExa3")?.addEventListener("click", exercicioa3)
+document.getElementById("btnExa4")?.addEventListener("click", exercicioa4)
+document.getElementById("btnExa5")?.addEventListener("click", exercicioa5)
