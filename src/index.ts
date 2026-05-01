@@ -52,9 +52,11 @@ import { exercicioa2 } from "./array/exercicioa2.js";
 import { exercicioa3 } from "./array/exercicioa3.js";
 import { exercicioa4 } from "./array/exercicioa4.js";
 import { exercicioa5 } from "./array/exercicioa5.js";
+import { exercicioa6 } from "./array/exercicioa6.js";
 
 document.getElementById("btnExa1")?.addEventListener("click", exercicioa1)
 document.getElementById("btnExa2")?.addEventListener("click", exercicioa2)
 document.getElementById("btnExa3")?.addEventListener("click", exercicioa3)
 document.getElementById("btnExa4")?.addEventListener("click", exercicioa4)
 document.getElementById("btnExa5")?.addEventListener("click", exercicioa5)
+document.getElementById("btnExa6")?.addEventListener("click", exercicioa6)
