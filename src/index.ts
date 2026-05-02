@@ -53,6 +53,9 @@ import { exercicioa3 } from "./array/exercicioa3.js";
 import { exercicioa4 } from "./array/exercicioa4.js";
 import { exercicioa5 } from "./array/exercicioa5.js";
 import { exercicioa6 } from "./array/exercicioa6.js";
+import { exercicioa7 } from "./array/exercicioa7.js";
+import { exercicioa8 } from "./array/exercicioa8.js";
+import { exercicioa9 } from "./array/exercicioa9.js";
 
 document.getElementById("btnExa1")?.addEventListener("click", exercicioa1)
 document.getElementById("btnExa2")?.addEventListener("click", exercicioa2)
@@ -60,3 +63,6 @@ document.getElementById("btnExa3")?.addEventListener("click", exercicioa3)
 document.getElementById("btnExa4")?.addEventListener("click", exercicioa4)
 document.getElementById("btnExa5")?.addEventListener("click", exercicioa5)
 document.getElementById("btnExa6")?.addEventListener("click", exercicioa6)
+document.getElementById("btnExa7")?.addEventListener("click", exercicioa7)
+document.getElementById("btnExa8")?.addEventListener("click", exercicioa8)
+document.getElementById("btnExa9")?.addEventListener("click", exercicioa9)

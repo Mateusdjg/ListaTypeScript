@@ -8,16 +8,8 @@ export function exercicioa6(): void{
     let lista:string[] = []
     for(let i = 1; i <= 15; i++){
         let nomes:string = prompt(`Informe o ${i}º nome: `)!
-        lista.push(nomes)
+        lista.push(nomes.toUpperCase())
     }
-
-    let listaC = lista.sort((a, b) => {
-        if(a < b) return -1
-        if(a > b) return 1
-        return 0
-    })
-
     console.log(`Nomes digitados: ${lista}`)
-    console.log(`Nomes ordem Crescente: ${lista.sort()}`)
-    console.log(`Nomes de forma ordenada: ${listaC}`)
+    console.log(`Nomes de forma ordenada: ${lista.sort()}`)
 }
