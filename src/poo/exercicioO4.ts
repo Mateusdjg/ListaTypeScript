@@ -32,9 +32,11 @@ let medida3:number = Number(prompt("Informe a largura do piso: "))
 let medida4:number = Number(prompt("Informe o comprimento do piso: "))
 
 let local = new Retangulo(medida1, medida2)
-local.exibir()
 let piso = new Retangulo(medida3, medida4)
-piso.exibir()
+
 
 let quantidadesDoPiso = local.area() / piso.area()
-console.log(quantidadesDoPiso)
+let quantidadeDeRodape = local.perimetro() / piso.Ladob
+
+console.log(`Quantidade de pisos: ${quantidadesDoPiso}`)
+console.log(`Quantidade de rodapés: ${quantidadeDeRodape}`)
