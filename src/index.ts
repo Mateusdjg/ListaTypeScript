@@ -66,3 +66,10 @@ document.getElementById("btnExa6")?.addEventListener("click", exercicioa6)
 document.getElementById("btnExa7")?.addEventListener("click", exercicioa7)
 document.getElementById("btnExa8")?.addEventListener("click", exercicioa8)
 document.getElementById("btnExa9")?.addEventListener("click", exercicioa9)
+
+// EXERCÍCIOS POO
+import { exercicio1poo } from "./poo/exercicioO1.js";
+import { exercicio2poo } from "./poo/exercicioO2.js";
+
+document.getElementById("btnExP1")?.addEventListener("click", exercicio1poo)
+document.getElementById("btnExP2")?.addEventListener("click", exercicio2poo)

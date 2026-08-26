@@ -2,23 +2,24 @@
 //  Atributos: Tamanho do lado
 //  Métodos: Mudar valor do Lado,
 //  Retornar valor do Lado e calcular Área;
+export function exercicio2poo():void{
+    class Quadrado{
+        tamanhoLados:number
 
-class Quadrado{
-    tamanhoLados:number
+        constructor(tamanhoLados:number){
+            this.tamanhoLados = tamanhoLados
+        }
 
-    constructor(tamanhoLados:number){
-        this.tamanhoLados = tamanhoLados
+        mudarValor():void{
+            this.tamanhoLados = 5
+        }
+
+        exibir():void{
+            this.mudarValor()
+            console.log(`Tamanho dos lados: ${this.tamanhoLados}cm  |  Área: ${this.tamanhoLados * this.tamanhoLados}cm²`)
+        }
     }
 
-    mudarValor():void{
-        this.tamanhoLados = 5
-    }
-
-    exibir():void{
-        this.mudarValor()
-        console.log(`Tamanho dos lados: ${this.tamanhoLados}cm  |  Área: ${this.tamanhoLados * this.tamanhoLados}cm²`)
-    }
+    let novoQuadrado = new Quadrado(4)
+    novoQuadrado.exibir()
 }
-
-let novoQuadrado = new Quadrado(4)
-novoQuadrado.exibir()
