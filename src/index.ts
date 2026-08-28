@@ -70,6 +70,26 @@ document.getElementById("btnExa9")?.addEventListener("click", exercicioa9)
 // EXERCÍCIOS POO
 import { exercicio1poo } from "./poo/exercicioO1.js";
 import { exercicio2poo } from "./poo/exercicioO2.js";
+import { exercicio3poo } from "./poo/exercicioO3.js";
+import { exercicio4poo } from "./poo/exercicioO4.js";
+import { exercicio5poo } from "./poo/exercicioO5.js";
+import { exercicio6poo } from "./poo/exercicioO6.js";
+import { exercicio7poo } from "./poo/exercicioO7.js";
+import { exercicio8poo } from "./poo/exercicioO8.js";
+import { exercicio9poo } from "./poo/exercicioO9.js";
+import { exercicio10poo } from "./poo/exercicioO10.js";
+import { exercicio16poo } from "./poo/exercicioO16.js";
+import { exercicio31poo } from "./poo/exercicioO31.js";
 
 document.getElementById("btnExP1")?.addEventListener("click", exercicio1poo)
 document.getElementById("btnExP2")?.addEventListener("click", exercicio2poo)
+document.getElementById("btnExP3")?.addEventListener("click", exercicio3poo)
+document.getElementById("btnExP4")?.addEventListener("click", exercicio4poo)
+document.getElementById("btnExP5")?.addEventListener("click", exercicio5poo)
+document.getElementById("btnExP6")?.addEventListener("click", exercicio6poo)
+document.getElementById("btnExP7")?.addEventListener("click", exercicio7poo)
+document.getElementById("btnExP8")?.addEventListener("click", exercicio8poo)
+document.getElementById("btnExP9")?.addEventListener("click", exercicio9poo)
+document.getElementById("btnExP10")?.addEventListener("click", exercicio10poo)
+document.getElementById("btnExP16")?.addEventListener("click", exercicio16poo)
+document.getElementById("btnExP31")?.addEventListener("click", exercicio31poo)

@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    padding-top: 70px; 
+    background-color: #000000; 
+    color: #ffffff;
+}
+
+
+.topo-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    gap: 25px;
+    background-color: #480078; 
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+
+.topo-links h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+
+.topo-links a {
+    color: #00FFFF;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+
+.topo-links a:hover {
+    color: #FF00F8;
+}
+
+
+.conteudo-exercicios section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-bottom: 1px solid #210888;
+}
+
+.conteudo-exercicios h2 {
+    color: #FFFC00;
+}
+
+button {
+    background-color: #C0ECCC;
+    color: #104028;
+    border: none;
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #30C008;
+    color: white;
+}

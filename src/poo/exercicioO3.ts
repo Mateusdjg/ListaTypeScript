@@ -5,33 +5,35 @@
 //  Calcular Área,
 //  Calcular Perímetro.
 
-class Retangulo {
-    LadoA:number
-    Ladob:number
+export function exercicio3poo():void{
+    class Retangulo {
+        LadoA:number
+        Ladob:number
 
-    constructor(ladoA:number, ladoB:number){
-        this.LadoA = ladoA
-        this.Ladob = ladoB
+        constructor(ladoA:number, ladoB:number){
+            this.LadoA = ladoA
+            this.Ladob = ladoB
+        }
+
+        mudarValor():void{
+            this.LadoA = 5
+            this.Ladob = 9
+        }
+
+        area():number{
+            return this.LadoA * this.Ladob
+        }
+
+        perimetro():number{
+            return (this.LadoA * 2) + (this.Ladob * 2)
+        }
+
+        exibir():void{
+            this.mudarValor()
+            console.log(`Valor dos lados: A: ${this.LadoA}   B: ${this.Ladob}\n Área: ${this.area()}\n Perímetro: ${this.perimetro()} `)
+        }
     }
 
-    mudarValor():void{
-        this.LadoA = 5
-        this.Ladob = 9
-    }
-
-    area():number{
-        return this.LadoA * this.Ladob
-    }
-
-    perimetro():number{
-        return (this.LadoA * 2) + (this.Ladob * 2)
-    }
-
-    exibir():void{
-        this.mudarValor()
-        console.log(`Valor dos lados: A: ${this.LadoA}   B: ${this.Ladob}\n Área: ${this.area()}\n Perímetro: ${this.perimetro()} `)
-    }
+    let novoRetangulo = new Retangulo(4,8)
+    novoRetangulo.exibir()
 }
-
-let novoRetangulo = new Retangulo(4,8)
-novoRetangulo.exibir()

@@ -4,28 +4,30 @@
 // diferente. O sistema deve cadastrar animais, listar por tipo e simular a &#39;hora da alimentação&#39; chamando o
 // método de som de cada um.
 
-abstract class Animal{
-    nome:string
-    especie:string
-    idade:number
-    som:string
-    constructor(nome:string, especie:string, idade:number, som:string){
-        this.nome = nome
-        this.especie = especie
-        this.idade = idade
-        this.som = som
-    }
+export function exercicio16poo():void{
+    abstract class Animal{
+        nome:string
+        especie:string
+        idade:number
+        som:string
+        constructor(nome:string, especie:string, idade:number, som:string){
+            this.nome = nome
+            this.especie = especie
+            this.idade = idade
+            this.som = som
+        }
 
-    abstract emitirSom():{
+        abstract emitirSom():{
 
+        }
     }
-}
-class Mamiferos extends Animal {
-    constructor(nome: string, especie:string, idade:number, som:string){
-        super(nome, especie, idade, som)
-    }
+    class Mamiferos extends Animal {
+        constructor(nome: string, especie:string, idade:number, som:string){
+            super(nome, especie, idade, som)
+        }
 
-    emitirSom():string{
-        return `Emitir som: ${this.som}`
+        emitirSom():string{
+            return `Emitir som: ${this.som}`
+        }
     }
 }
