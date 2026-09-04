@@ -2,7 +2,7 @@ body {
     margin: 0;
     font-family: sans-serif;
     padding-top: 70px; 
-    background-color: #000000; 
+    background-color: #1a0657; 
     color: #ffffff;
 }
 
@@ -37,7 +37,7 @@ body {
 
 
 .topo-links a:hover {
-    color: #FF00F8;
+    color: #ffffff;
 }
 
 
@@ -45,11 +45,11 @@ body {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-    border-bottom: 1px solid #210888;
+    border-bottom: 1px solid #704cff;
 }
 
 .conteudo-exercicios h2 {
-    color: #FFFC00;
+    color: #fffd6e;
 }
 
 button {
