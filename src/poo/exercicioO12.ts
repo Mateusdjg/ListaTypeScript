@@ -3,23 +3,45 @@
 // total do aluguel e exiba o resumo da locação. Por fim, o sistema deve perguntar se deseja fazer uma
 // nova locação.
 
-class SitemaLocadora {
-    modeloCarro:string
-    valorDiaria:number
-    quantidadeDias:number
+export function exercicio12poo():void{
+    class Locadora {
+        modeloCarro:string
+        valorDiaria:number
+        quantidadeDias:number
 
-    constructor(modeloCarro:string, valorDiario:number, quantidadeDias:number){
-        this.modeloCarro = modeloCarro
-        this.valorDiaria = valorDiario
-        this.quantidadeDias = quantidadeDias
+        constructor(modeloCarro:string, valorDiario:number, quantidadeDias:number){
+            this.modeloCarro = modeloCarro
+            this.valorDiaria = valorDiario
+            this.quantidadeDias = quantidadeDias
+        }
+
+        calcularValorTotalAluguel():number{
+            let calculo:number = this.quantidadeDias * this.valorDiaria
+            return calculo
+        }
+
+        exibir(){
+            alert(`============ RESUMO DA LOCAÇÃO ============\nModelo do carro: ${this.modeloCarro}\nValor da diária: R$ ${this.valorDiaria}\nDias alugado: ${this.quantidadeDias}\nValor total do aluguel: R$ ${this.calcularValorTotalAluguel()}`)
+        }
     }
 
-    calcularValorTotalAluguel(quanDias:number, valorDiario:number):number{
-        let calculo:number = quanDias * valorDiario
-        return calculo
-    }
+    let novaLocao:string = ""
+    while(novaLocao != "n"){
+        let modeloCarro:string = String(prompt("Informe o modelo do carro: "))
+        let diaria:number = Number(prompt("Informe o valor da diária: "))
+        let diasAlugado:number = Number(prompt("Informe a quantidade de dias alugado: "))
 
-    exibir(){
-        alert(`============ RESUMO DA LOCAÇÃO ============\nModelo do carro: ${this.modeloCarro}\nValor da di`)
+        let locacao = new Locadora(modeloCarro, diaria, diasAlugado)
+        locacao.exibir()
+
+        novaLocao = String(prompt("Deseja fazer uma nova locação?[S | N]: ")).toLowerCase()
+        if (novaLocao !== "s" && novaLocao !== "n") {
+            alert("Opção inválida! Encerrando o sistema.")
+            break
+        }
+            
     }
+    
+
+
 }
