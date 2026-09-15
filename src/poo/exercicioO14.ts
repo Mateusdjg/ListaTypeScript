@@ -5,16 +5,37 @@
 
 export function exercicio14poo() {
     class Livro {
-        titulo: string
-        autor: string
-        anoPublicacao: number
-        disbonibilidade: boolean
+        private _titulo: string
+        private _autor: string
+        private _anoPublicacao: number
+        private _disbonibilidade: boolean
 
         constructor(titulo: string, autor: string, anoPublicacao: number, disbonibilidade: boolean) {
-            this.titulo = titulo
-            this.autor = autor
-            this.anoPublicacao = anoPublicacao
-            this.disbonibilidade = disbonibilidade
+            this._titulo = titulo
+            this._autor = autor
+            this._anoPublicacao = anoPublicacao
+            this._disbonibilidade = disbonibilidade
+        }
+
+        get titulo():string{
+            return this._titulo
+        }
+        get autor():string{
+            return this._autor
+        }
+        get anoPublicacao():number{
+            return this._anoPublicacao
+        }
+        get disponibilidade():boolean{
+            return this._disbonibilidade
+        }
+
+        emprestimo(): boolean{
+            if(this._disbonibilidade){
+                this._disbonibilidade = false
+                return true
+            }
+            return false
         }
     }
 
@@ -35,10 +56,11 @@ export function exercicio14poo() {
         livros.push(novoLivro)
     }
 
+    console.log("======= LIVROS DISPONÍVEIS NA BIBLIOTECA =======")
     let livrosDisponiveis = false
     for(let i = 0; i < livros.length; i++){
-        if(livros[i].disbonibilidade === true){
-            console.log(`======= LIVROS DISPONÍVEIS NA BIBLIOTECA =======\nTítulo: ${livros[i].titulo}\nAutor: ${livros[i].autor}\nAno Publicidade: ${livros[i].anoPublicacao}`)
+        if(livros[i].disponibilidade){
+            console.log(`Título: ${livros[i].titulo}\nAutor: ${livros[i].autor}\nAno Publicidade: ${livros[i].anoPublicacao}`)
             livrosDisponiveis = true
         }
     }
@@ -53,8 +75,7 @@ export function exercicio14poo() {
         if(livros[i].titulo.toLowerCase() === buscaTitulo.toLowerCase()){
             livroEncontrado = true
 
-            if(livros[i].disbonibilidade){
-                livros[i].disbonibilidade = false
+            if(livros[i].emprestimo()){
                 console.log(`Emprestimo do livro ${livros[i].titulo} realizado com sucesso!!!`)
             }
             else{

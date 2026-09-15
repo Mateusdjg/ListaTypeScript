@@ -9,12 +9,16 @@ export function exercicio16poo():void{
         nome:string
         especie:string
         idade:number
-        som:string
+        private _som:string
         constructor(nome:string, especie:string, idade:number, som:string){
             this.nome = nome
             this.especie = especie
             this.idade = idade
-            this.som = som
+            this._som = som
+        }
+
+        get som():string{
+            return this._som
         }
 
         abstract emitirSom():{
