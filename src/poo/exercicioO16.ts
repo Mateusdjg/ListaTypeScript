@@ -25,9 +25,7 @@ export function exercicio16poo(): void {
             return this._som
         }
 
-        abstract emitirSom(): {
-
-        }
+        abstract emitirSom(): string
     }
 
     class Mamiferos extends Animal {
@@ -35,80 +33,78 @@ export function exercicio16poo(): void {
             super(nome, especie, idade, alimentacao, som)
         }
 
-        get som(): string {
-            return this.som
-        }
-
         emitirSom(): string {
-            return `Emitir som: ${this.som}`
+            return this.som
         }
     }
 
     class Aves extends Animal {
         migratoria: boolean
+
         constructor(migratoria: boolean, nome: string, especie: string, idade: number, alimentacao: string, som: string) {
             super(nome, especie, idade, alimentacao, som)
             this.migratoria = migratoria
         }
 
-        get som(): string {
-            return this.som
-        }
-
         emitirSom(): string {
-            return (`Emitir som: ${this.som}`)
+            return this.som
         }
     }
 
     let mamiferos: Mamiferos[] = []
     let aves: Aves[] = []
-    let continuar: string = "", nome: string, idade: number, especie: string, alimentacao: string, som: string, verificarMigratoria: number, aveMigratoria: boolean
 
-    while (continuar.toLowerCase() != "n") {
-        let classe: number = Number(prompt(`Qual é a classe biológica do animal? (1- Mamífero | 2- Ave): `))
+    let continuar: string = "s"
 
-        switch (classe) {
-            case 1:
-                nome = String(prompt(`insira o nome do animal: `))
-                especie = String(prompt(`Insira a espécie do animal: `))
-                idade = Number(prompt(`Insira a idade do animal: `))
-                alimentacao = String(prompt(`Qual é a alimentação do animal?: `))
-                som = String(prompt(`Insira o barulho que o animal faz: `))
+    while (continuar.toLowerCase() === "s") {
+        let opcao: number = Number(prompt("Qual classe deseja cadastrar?\n1 - Mamífero\n2 - Ave"))
 
-                let mamifero = new Mamiferos(nome, especie, idade, alimentacao, som)
-                mamiferos.push(mamifero)
+        switch (opcao) {
+            case 1: 
+                let nome = String(prompt("Nome do mamífero:"))
+                let especie = String(prompt("Espécie:"))
+                let idade = Number(prompt("Idade:"))
+                let alimentacao = String(prompt("Alimentação:"))
+                let som = String(prompt("Som do animal:"))
+
+                let novoMamifero = new Mamiferos(nome, especie, idade, alimentacao, som)
+                mamiferos.push(novoMamifero)
                 break
+            
+
             case 2:
-                nome = String(prompt(`insira o nome do animal: `))
-                especie = String(prompt(`Insira a espécie do animal: `))
-                idade = Number(prompt(`Insira a idade do animal: `))
-                alimentacao = String(prompt(`Qual é a alimentação do animal?: `))
-                som = String(prompt(`Insira o barulho que o animal faz: `))
-                verificarMigratoria = Number(prompt(`A ave é migratória? (1- sim | 2- não): `))
-                if (verificarMigratoria == 1) {
-                    aveMigratoria = true
-                }
-                else {
-                    aveMigratoria = false
-                }
-                let ave = new Aves(aveMigratoria, nome, especie, idade, alimentacao, som)
-                aves.push(ave)
+                let nomeA = String(prompt("Nome da ave:"))
+                let especieA = String(prompt("Espécie:"))
+                let idadeA = Number(prompt("Idade:"))
+                let alimentacaoA = String(prompt("Alimentação:"))
+                let somA = String(prompt("Som da ave:"))
+                let respMigratoria = Number(prompt("É migratória?\n1 - Sim\n2 - Não"))
+                
+                let ehMigratoria = (respMigratoria === 1)
+
+                let novaAve = new Aves(ehMigratoria, nomeA, especieA, idadeA, alimentacaoA, somA)
+                aves.push(novaAve)
                 break
+            
+
             default:
-                alert(`Opção inválida!!!`)
+                alert("Opção inválida!")
                 break
         }
 
-        alert("!! ABRA O CONSOLE PARA VER OS RESULTADOS !!")
-
-        console.log("---------- ANIMAIS MAMÍFEROS ----------")
-        for (let i = 0; i < mamiferos.length; i++) {
-            console.log(`Nome: ${mamiferos[i].nome}\nEspecie: ${mamiferos[i].especie}\nIdade: ${mamiferos[i].idade}\nAlimentação: ${mamiferos[i].alimentacao}\nSom: ${mamiferos[i].emitirSom()}`)
-        }
-
-        console.log("---------- SALÁRIO DOS FUNCIONÁRIOS ASSALARIADOS ----------")
-        for (let i = 0; i < aves.length; i++) {
-            console.log(`Nome: ${aves[i].nome}\nEspecie: ${aves[i].especie}\nIdade: ${aves[i].idade}\nAlimentação: ${aves[i].alimentacao}\nMigratória: ${aves[i].migratoria}\nSom: ${aves[i].emitirSom()}`)
-        }
+        continuar = String(prompt("Deseja cadastrar outro animal? (S/N)"))
     }
+
+
+    console.log("======= LISTA DE MAMÍFEROS =======")
+    for (let i = 0; i < mamiferos.length; i++) {
+        console.log(`Nome: ${mamiferos[i].nome} | Espécie: ${mamiferos[i].especie} | Som: ${mamiferos[i].emitirSom()}`)
+    }
+
+    console.log("======= LISTA DE AVES =======")
+    for (let i = 0; i < aves.length; i++) {
+        console.log(`Nome: ${aves[i].nome} | Espécie: ${aves[i].especie} | Som: ${aves[i].emitirSom()}`)
+    }
+
+    alert("Cadastros finalizados! Abra o console para ver a lista.")
 }
