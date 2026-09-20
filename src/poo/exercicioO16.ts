@@ -18,7 +18,7 @@ export function exercicio16poo(): void {
             this.especie = especie
             this.idade = idade
             this.alimentacao = alimentacao
-            this._som = som
+            this._som = som 
         }
 
         get som(): string {
