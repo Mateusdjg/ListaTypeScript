@@ -19,8 +19,8 @@ export function exercicio10poo():void{
         constructor(nome:string,idade:number){
             this.nome = nome
             this.idade = idade
-            this.fome = this.geraNumero(80, 20)
-            this.saude = this.geraNumero(80, 20)
+            this.fome = this.geraNumero(0, 100)
+            this.saude = this.geraNumero(0, 100)
         }
 
         private geraNumero(max:number, min:number):number{
@@ -105,6 +105,7 @@ export function exercicio10poo():void{
         }
 
         brincar(brincadeiras:number):void{
+            
             switch (brincadeiras){
                 case 1:
                     alert(`${this.nome} brincou de Pula corda, e perdeu 30 de energia`)
@@ -151,11 +152,17 @@ export function exercicio10poo():void{
                     break
 
                 }
+                if (this.fome > 100) {
+                this.fome = 100
+            }
             
         }
 
         dormir():void{
             this.energia += 100
+            if(this.energia >= 100){
+                this.energia = 100
+            }
         }
         
 
@@ -199,9 +206,16 @@ export function exercicio10poo():void{
                 break
 
             case 5:
-                let brincadeiras:number = Number(prompt("======= BRINCADEIRAS =======\n1 - Pula corda\n2 - jogo da velha\n3 - ping pong\n4 - ir para a piscina\n5 - pegar o celular\nOBS: Ao brincar seu Tamagushi fica com fome.\nEscolha: "))
-                pet.brincar(brincadeiras)
-                break
+                if(pet.energia <= 15){
+                    alert(`${pet.nome} esta sem energia para brincar!! Va dormir`)
+                    break
+                }
+                else{
+                    let brincadeiras:number = Number(prompt("======= BRINCADEIRAS =======\n1 - Pula corda\n2 - jogo da velha\n3 - ping pong\n4 - ir para a piscina\n5 - pegar o celular\nOBS: Ao brincar seu Tamagushi fica com fome.\nEscolha: "))
+                    pet.brincar(brincadeiras)
+                    
+                }
+                    break
             case 6:
                 alert(`${pet.nome} foi dormir para recarregar suas energia`)
                 pet.dormir()

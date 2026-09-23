@@ -8,23 +8,117 @@
 // de pedidos, calcula os valores finais de cada um (aplicando as taxas quando necessário) e exibe o
 // faturamento total do estabelecimento.
 
-export function exercicio20poo(): void{
-    abstract class Pedido {
-        private _numeroMesa: number
-        private _valorIngredientes: number
+// export function exercicio20poo(): void{
+//     abstract class Pedido {
+//         private _numeroMesa: number
+//         private _valorIngredientes: number
 
-        constructor(numeroMesa: number, valorIngredientes: number){
-            this._numeroMesa = numeroMesa
-            this._valorIngredientes = valorIngredientes
-        }
+//         constructor(numeroMesa: number, valorIngredientes: number){
+//             this._numeroMesa = numeroMesa
+//             this._valorIngredientes = valorIngredientes
+//         }
 
-        get numeroMesa(): number{
-            return this._numeroMesa
-        }
-        get valorIngredientes(): number{
-            return this._valorIngredientes
-        }
+//         get numeroMesa(): number{
+//             return this._numeroMesa
+//         }
+//         get valorIngredientes(): number{
+//             return this._valorIngredientes
+//         }
 
         
-    }
+//     }
+// }
+
+export function exercicio20poo(): void{
+
+
+   abstract class Pedido {
+       private _numeroMesa: number
+       private _valorIngredientes: number
+
+
+       constructor(numeroMesa: number, valorIngredientes: number){
+           this._numeroMesa = numeroMesa
+           this._valorIngredientes = valorIngredientes
+       }
+
+
+       get numeroMesa(): number{
+           return this._numeroMesa
+       }
+       get valorIngredientes(): number{
+           return this._valorIngredientes
+       }
+
+
+       abstract calcularTotal():number
+   }
+
+
+   class PedidoMesa extends Pedido {
+       constructor(numeroMesa: number, valorIngredientes: number){
+           super(numeroMesa, valorIngredientes)
+       }
+
+
+       calcularTotal(): number {
+           return this.valorIngredientes
+       }
+   }
+
+
+   class PedidoDelivery extends Pedido {
+       endereco: string
+       private taxaEntrega: number
+
+
+       constructor(endereco: string, taxaEntrega: number, numeroMesa: number, valorIngredientes: number){
+           super(numeroMesa, valorIngredientes)
+           this.endereco = endereco
+           this.taxaEntrega = taxaEntrega
+       }
+
+
+       calcularTotal(): number {
+           return this.valorIngredientes + this.taxaEntrega
+       }
+   }
+
+
+   let pedidos: Pedido[] = []
+   let op: string = "s", numeroMesa: number, valorIngredientes: number
+   while(op.toLowerCase() != "n"){
+       let consumo: number = Number(prompt("Consumo na 1 - Pizzaria | 2 - Delivery"))
+       switch(consumo){
+           case 1:
+               numeroMesa = Number(prompt("Número da mesa"))
+               valorIngredientes = Number(prompt("Valor dos ingredientes"))
+
+
+               let pedidoMesa = new PedidoMesa(numeroMesa, valorIngredientes)
+
+
+               pedidos.push(pedidoMesa)
+               break
+           case 2:
+               numeroMesa = Number(prompt("Número da mesa"))
+               valorIngredientes = Number(prompt("Valor dos ingredientes"))
+               let endereco: string = String(prompt("Endereço"))
+               let taxaEntrega: number = Number(prompt("Taxa de entrega"))
+
+
+               let pedidoDelivery = new PedidoDelivery(endereco, taxaEntrega, numeroMesa, valorIngredientes)
+
+
+               pedidos.push(pedidoDelivery)
+               break
+           default:
+               alert("Opção inválida!!!")
+               break
+
+
+       }
+
+
+   }
 }
