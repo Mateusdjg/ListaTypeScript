@@ -8,27 +8,6 @@
 // de pedidos, calcula os valores finais de cada um (aplicando as taxas quando necessário) e exibe o
 // faturamento total do estabelecimento.
 
-// export function exercicio20poo(): void{
-//     abstract class Pedido {
-//         private _numeroMesa: number
-//         private _valorIngredientes: number
-
-//         constructor(numeroMesa: number, valorIngredientes: number){
-//             this._numeroMesa = numeroMesa
-//             this._valorIngredientes = valorIngredientes
-//         }
-
-//         get numeroMesa(): number{
-//             return this._numeroMesa
-//         }
-//         get valorIngredientes(): number{
-//             return this._valorIngredientes
-//         }
-
-        
-//     }
-// }
-
 export function exercicio20poo(): void{
 
 
@@ -115,10 +94,18 @@ export function exercicio20poo(): void{
            default:
                alert("Opção inválida!!!")
                break
-
-
        }
 
+       op = String(prompt("Mais um pedido[ s | n ]"))
 
    }
+
+   let faturamentoTotal: number = 0
+   for(let i = 0; i<pedidos.length; i++){
+        faturamentoTotal += pedidos[i].calcularTotal()
+   }
+
+   alert(`==== FATURAMENTO TOTAL ====\nTOTAL: ${faturamentoTotal}`)
+
+
 }

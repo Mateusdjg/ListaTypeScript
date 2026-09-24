@@ -16,6 +16,7 @@
 
 // A segunda categoria é a de Técnico Administrativo, que possui um atributo privado para armazenar o valor fixo de um auxílio-alimentação de R$ 1.000,00,
 // valor este que deve ser somado ao seu salário base no cálculo final. 
+
 // A terceira categoria é a de Diretor,que possui como atributos privados o seu departamento e o valor de uma gratificação de função, que
 // também deve ser incorporada ao salário base no cálculo de sua remuneração.
 
@@ -31,5 +32,117 @@
 // geral que a instituição terá com a folha de pagamento daquele mês.
 
 export function exercicio18poo(): void{
-    
+    class Funcionario {
+        private _nome: string
+        private _matricula: number
+        private _salarioBase: number
+
+        constructor(nome: string, matricula: number, salarioBase: number){
+            this._nome = nome
+            this._matricula = matricula
+            this._salarioBase = salarioBase
+        }
+
+        get nome(): string{
+            return this._nome
+        }
+        get matricula(): number{
+            return this._matricula
+        }
+        get salarioBase(): number{
+            return this._salarioBase
+        }
+
+        calcularSalario(): number{ return this._salarioBase}
+    }
+
+    class Professor extends Funcionario{
+        private _regimeTrabalho: string
+        constructor(nome: string, matricula: number, salarioBase: number, regimeTrabalho: string){
+            super(nome, matricula, salarioBase)
+            this._regimeTrabalho = regimeTrabalho
+        }
+
+        calcularSalario(): number {
+            if(this._regimeTrabalho === "DE"){
+                let calculo = this.salarioBase * 0.20
+                return this.salarioBase + calculo
+            }
+            else{
+                return this.salarioBase
+            }
+            
+        }
+    }
+
+    class TecnicoAdministrativo extends Funcionario{
+        private _auxilioAlimentacao: number = 1000
+        constructor(nome: string, matricula: number, salarioBase: number){
+            super(nome, matricula, salarioBase)
+        }
+
+        get auxilioAlimentacao(): number{
+            return this._auxilioAlimentacao
+        }
+
+        calcularSalario(): number {
+            return this.salarioBase + this.auxilioAlimentacao
+        }
+    }
+
+    class Direto extends Funcionario {
+        private _departamento: string
+        private _gratificacao: number
+
+        constructor(nome: string, matricula: number, salarioBase: number, derpatamento: string, gratificacao: number){
+            super(nome, matricula, salarioBase)
+            this._departamento = derpatamento
+            this._gratificacao = gratificacao
+        }
+
+        calcularSalario(): number {
+            return this.salarioBase + this._gratificacao
+        }
+    }
+
+    let totalProfessor: number = 0, totalTecnicos: number = 0, totalDiretores: number = 0, cadastraNovamente: string = "s", nome:string, matricula: number, salarioBase: number
+    while(cadastraNovamente.toLowerCase() != "n"){
+        let cadastrar = Number(prompt("1 - Cadastrar Professor\n2 - Cadastrar Técnico Administrativo\n3 - Cadastrar Diretor"))
+        switch (cadastrar){
+            case 1:
+                nome = String(prompt("Nome"))
+                matricula = Number(prompt("Matricula"))
+                salarioBase = Number(prompt("Salário base"))
+                let regimeTrabalho = String(prompt("Regime de trabalho\n[DE - Dedicação Exclusiva]")).toUpperCase()
+
+                let professor = new Professor(nome, matricula, salarioBase, regimeTrabalho)
+                totalProfessor += professor.calcularSalario()
+                break
+            case 2:
+                nome = String(prompt("Nome"))
+                matricula = Number(prompt("Matricula"))
+                salarioBase = Number(prompt("Salário base"))
+
+                let tecnicoAdministrativo = new TecnicoAdministrativo(nome, matricula, salarioBase)
+                totalTecnicos += tecnicoAdministrativo.calcularSalario()
+                break
+            case 3:
+                nome = String(prompt("Nome"))
+                matricula = Number(prompt("Matricula"))
+                salarioBase = Number(prompt("Salário base"))
+                let departamento = String(prompt("Departamento"))
+                let gratificacao = Number(prompt("Gratificação"))
+
+                let direto = new Direto(nome, matricula, salarioBase, departamento, gratificacao)
+                totalDiretores += direto.calcularSalario()
+                break
+            default:
+                alert("OPÇÃO INVÁLIDA!!!")
+                break
+        }
+
+        cadastraNovamente = String(prompt("Cadastrar novamente?[ s | n]"))
+    }
+
+    alert(`==== GASTOS ====\nGastos totais com Professores: ${totalProfessor}\nGastos totaais Técnicos Administrativos: ${totalTecnicos}\nGastos totais com Diretores: ${totalDiretores}\nGasto total: ${totalProfessor + totalTecnicos + totalDiretores}`)
 }
