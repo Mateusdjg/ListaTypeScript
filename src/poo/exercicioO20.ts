@@ -10,7 +10,6 @@
 
 export function exercicio20poo(): void{
 
-
    abstract class Pedido {
        private _numeroMesa: number
        private _valorIngredientes: number

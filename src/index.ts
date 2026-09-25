@@ -88,6 +88,9 @@ import { exercicio17poo } from "./poo/exercicioO17.js";
 import { exercicio18poo } from "./poo/exercicioO18.js";
 import { exercicio19poo } from "./poo/exercicioO19.js";
 import { exercicio20poo } from "./poo/exercicioO20.js";
+import { exercicio21poo } from "./poo/exercicioO21.js";
+import { exercicio22poo } from "./poo/exercicioO22.js";
+import { exercicio23poo } from "./poo/exercicioO23.js";
 import { exercicio31poo } from "./poo/exercicioO31.js";
 
 
@@ -111,4 +114,7 @@ document.getElementById('btnExP17')?.addEventListener('click', exercicio17poo)
 document.getElementById('btnExP18')?.addEventListener('click', exercicio18poo)
 document.getElementById("btnExP19")?.addEventListener('click', exercicio19poo)
 document.getElementById("btnExP20")?.addEventListener('click', exercicio20poo)
+document.getElementById("btnExP21")?.addEventListener('click', exercicio21poo)
+document.getElementById("btnExP22")?.addEventListener('click', exercicio22poo)
+document.getElementById("btnExP23")?.addEventListener('click', exercicio23poo)
 document.getElementById("btnExP31")?.addEventListener("click", exercicio31poo)
