@@ -49,7 +49,6 @@ export function exercicio23poo(): void {
 
         calcularPrecoFinal(dataHoje: string): number {
             if (this._dataValidade === dataHoje) {
-                // Aplica 30% de desconto caso esteja no dia do vencimento
                 return this.precoCusto * 0.70
             }
             return this.precoCusto
@@ -62,7 +61,6 @@ export function exercicio23poo(): void {
         }
 
         calcularPrecoFinal(dataHoje: string): number {
-            // Produtos não perecíveis não sofrem alteração de valor
             return this.precoCusto
         }
     }
@@ -70,8 +68,7 @@ export function exercicio23poo(): void {
     let estoque: Produto[] = []
     let op: string = "s", codigo: number, nome: string, precoCusto: number
 
-    // Cadastro de produtos no estoque pelo gerente
-    while (op.toLowerCase() !== "n") {
+    while (op.toLowerCase() != "n") {
         let tipoProduto: number = Number(prompt("Cadastrar Produto:\n1 - Produto Perecível\n2 - Produto Não Perecível"))
 
         switch (tipoProduto) {
@@ -95,18 +92,22 @@ export function exercicio23poo(): void {
                 break
 
             default:
-                alert("Opção inválida!!!")
+                alert("Opção inválida!")
                 break
         }
 
-        op = String(prompt("Cadastrar mais um produto no estoque? [ s | n ]"))
+        op = String(prompt("Cadastrar mais um produto no estoque? [s/n]"))
     }
 
-    // Simulação da passagem do caixa
+    alert("!! Abra o console !!")
+    for(let i = 0; i<estoque.length; i++){
+        console.log(`Nome: ${estoque[i].nome} | Código: ${estoque[i].codigo}`)
+    }
+
     let simularCaixa: string = "s"
     let dataAtual: string = String(prompt("Informe a data de hoje para o caixa (formato: DD/MM/AAAA)"))
 
-    while (simularCaixa.toLowerCase() !== "n") {
+    while (simularCaixa.toLowerCase() != "n") {
         let codigoBusca: number = Number(prompt("Passagem do Caixa - Digite o código do produto:"))
         let encontrado: boolean = false
 

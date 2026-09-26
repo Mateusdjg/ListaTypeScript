@@ -91,6 +91,7 @@ import { exercicio20poo } from "./poo/exercicioO20.js";
 import { exercicio21poo } from "./poo/exercicioO21.js";
 import { exercicio22poo } from "./poo/exercicioO22.js";
 import { exercicio23poo } from "./poo/exercicioO23.js";
+import { exercicio24poo } from "./poo/exercicioO24.js";
 import { exercicio31poo } from "./poo/exercicioO31.js";
 
 
@@ -117,4 +118,5 @@ document.getElementById("btnExP20")?.addEventListener('click', exercicio20poo)
 document.getElementById("btnExP21")?.addEventListener('click', exercicio21poo)
 document.getElementById("btnExP22")?.addEventListener('click', exercicio22poo)
 document.getElementById("btnExP23")?.addEventListener('click', exercicio23poo)
+document.getElementById("btnExP24")?.addEventListener('click', exercicio24poo)
 document.getElementById("btnExP31")?.addEventListener("click", exercicio31poo)

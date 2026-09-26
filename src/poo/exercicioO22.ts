@@ -57,10 +57,10 @@ export function exercicio22poo(): void {
     let frota: Veiculo[] = []
     let op: string = "s", placa: string, quilometragem: number
 
-    while (op.toLowerCase() !== "n") {
-        let tipoVeiculo: number = Number(prompt("Cadastrar Veículo:\n1 - Ônibus\n2 - Ambulância"))
+    while (op.toLowerCase() != "n") {
+        let tipo: number = Number(prompt("Cadastrar Veículo:\n1 - Ônibus\n2 - Ambulância"))
 
-        switch (tipoVeiculo) {
+        switch (tipo) {
             case 1:
                 placa = String(prompt("Placa do Ônibus")).toUpperCase()
                 quilometragem = Number(prompt("Quilometragem atual"))
@@ -83,8 +83,13 @@ export function exercicio22poo(): void {
         op = String(prompt("Cadastrar mais um veículo? [ s | n ]"))
     }
 
+    alert("Abra o console para verificar as placas")
+    for(let i = 0; i<frota.length; i++){
+        console.log(`Placa: ${frota[i].placa}`)
+    }
+    
     let consultarOutro: string = "s"
-    while (consultarOutro.toLowerCase() !== "n") {
+    while (consultarOutro.toLowerCase() != "n") {
         let placaBusca: string = String(prompt("Informe a placa do veículo para verificação de manutenção:")).toUpperCase()
         let encontrado: boolean = false
 
