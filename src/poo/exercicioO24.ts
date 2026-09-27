@@ -36,10 +36,10 @@ export function exercicio24poo(): void {
         }
     }
 
-    class TarefaAcademica extends Tarefa{
+    class TarefaAcademica extends Tarefa {
         private _disciplina: string
 
-        constructor(descricao: string, disciplina: string){
+        constructor(descricao: string, disciplina: string) {
             super(descricao)
             this._disciplina = disciplina
         }
@@ -49,10 +49,10 @@ export function exercicio24poo(): void {
         }
     }
 
-    class TarefaPessoal extends Tarefa{
+    class TarefaPessoal extends Tarefa {
         prioridade: string
 
-        constructor(descricao: string, prioridade: string){
+        constructor(descricao: string, prioridade: string) {
             super(descricao)
             this.prioridade = prioridade
         }
@@ -64,7 +64,7 @@ export function exercicio24poo(): void {
 
     let listaTarefas: Tarefa[] = []
     let executar: number = 1, descricao: string
-    while(executar != 0){
+    while (executar != 0) {
         executar = Number(prompt("==== TAREFAS ====\n1 - Nova Tarefa Acadêmica\n2 - Nova Tarefa Pessoal\n3 - Concluir Tarefa\n4 - Acadêmicas Pedentes\n0 - Sair"))
 
         switch (executar) {
@@ -83,31 +83,54 @@ export function exercicio24poo(): void {
                 listaTarefas.push(tarefaPessoal)
                 break
             case 3:
-                alert("ABRA O CONSOLE PARA VISUALIZAR AS TAREFAS")
-                console.log(" ==== TAREFA PARA CONCLUIR ====")
-                for(let i = 0; i<listaTarefas.length; i++){
-                    console.log(`${i + 1} - ${listaTarefas[i].exibir()}`)
-                }
-                let tarefa: number = Number(prompt("Digite o número da tarefa:"))
-                let indice: number = tarefa - 1
+                if (listaTarefas.length > 0) {
+                    alert("ABRA O CONSOLE PARA VISUALIZAR AS TAREFAS")
+                    console.log(" ==== TAREFA ====")
+                    for (let i = 0; i < listaTarefas.length; i++) {
+                        console.log(`${i + 1} - ${listaTarefas[i].exibir()}`)
+                    }
+                    let tarefa: number = Number(prompt("Digite o número da tarefa:"))
+                    let indice: number = tarefa - 1
 
-                if(indice < listaTarefas.length && indice >= 0){
-                    listaTarefas[indice].concluir()
-                    alert("Tarefa Concluida")
+                    if (indice < listaTarefas.length && indice >= 0) {
+                        if (!listaTarefas[indice].verificarConcluida()) {
+                            listaTarefas[indice].concluir()
+                            alert("Tarefa Concluida")
+                        } else {
+                            alert("Tarefa ja concluída")
+                        }
+                    }
+                    else {
+                        alert("Número da tarefa inválido")
+                    }
+                } else{
+                    alert("Não há nenhuma tarefa na lista!")
                 }
-                else{
-                    alert("Número da tarefa inválido")
-                }
+
                 break
             case 4:
-                console.log(" ==== TAREFAS ACADÊMICAS PEDENTES ====")
 
-                for(let tarefa of listaTarefas){
-                    if(tarefa instanceof TarefaAcademica && !tarefa.verificarConcluida()){
+                console.log(" ==== TAREFAS ACADÊMICAS PEDENTES ====")
+                
+                let pendente = false
+
+                for (let tarefa of listaTarefas) {
+                    if (tarefa instanceof TarefaAcademica && !tarefa.verificarConcluida()) {
                         console.log(tarefa.exibir())
+                        pendente = true
                     }
                 }
 
+                if(!pendente){
+                    alert("Nenhuma tarefa acadêmica pendente no momento!")
+                }
+                break
+            case 0:
+                alert("Finalizando...")
+                break
+            default:
+                alert("Opção inválida!!")
+                break
         }
     }
 
