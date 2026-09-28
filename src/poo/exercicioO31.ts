@@ -13,57 +13,121 @@
 // • Filtro e exibição dos projetos acima da média.
 // • Chamada polimórfica a descricaoCategoria() na exibição final.
 
-export function exercicio31poo():void{
+export function exercicio31poo(): void {
     abstract class Projeto {
         private _titulo: string
         private _coordenador: string
-        private _nota: number
+        private _nota: number = 0
 
-        constructor(titulo:string, coordenador:string, nota:number){
+        constructor(titulo: string, coordenador: string, nota: number) {
             this._titulo = titulo
             this._coordenador = coordenador
-            this._nota = nota
+            this.nota = nota
         }
 
-        get nota():number{
+        get titulo(): string {
+            return this._titulo
+        }
+
+        get coordenador(): string {
+            return this._coordenador
+        }
+
+        get nota(): number {
             return this._nota
         }
 
-        set nota(valor:number){
-            if(valor < 0 || valor > 10){
-                alert("Valor inválido!!!")
-            }else{
+        set nota(valor: number) {
+            if (valor < 0 || valor > 10 || isNaN(valor)) {
+                alert("Nota inválida! Digite um valor entre 0 e 10.")
+            } else {
                 this._nota = valor
             }
         }
 
-        abstract descricaoCategoria():void
-
-        abstract calculodeMedia():number
+        abstract descricaoCategoria(): string
     }
 
-    class projetoVerde extends Projeto{
-        constructor(titulo:string, coordenador:string, nota:number){
+    class ProjetoVerde extends Projeto {
+        constructor(titulo: string, coordenador: string, nota: number) {
             super(titulo, coordenador, nota)
         }
-        public descricaoCategoria():void{
-            
+
+        descricaoCategoria(): string {
+            return "Projeto Verde (Plantio Urbano)"
         }
-        public calculodeMedia():number{
-            let contador=0, medeia=0, acum=0, op=0
-            op = Number(prompt("Informe um valor -1 para sair: "))
-            while(op != 0){
-                
+    }
+
+    class ProjetoCultural extends Projeto {
+        constructor(titulo: string, coordenador: string, nota: number) {
+            super(titulo, coordenador, nota)
+        }
+
+        descricaoCategoria(): string {
+            return "Projeto Cultural (Conscientização)"
+        }
+    }
+
+    let listaProjetos: Projeto[] = []
+    let executar: boolean = true
+    let titulo: string, coordenador: string, nota: number
+
+    while (executar) {
+        let tipo: number = Number(prompt("Tipo do Projeto:\n1 - Projeto Verde\n2 - Projeto Cultural\n0 - Sair"))
+
+        switch (tipo) {
+            case 1:
+                titulo = String(prompt("Título:"))
+                coordenador = String(prompt("Coordenador:"))
+                nota = Number(prompt("Nota (0 a 10):"))
+
+                if (!titulo || titulo.trim() === "" || !coordenador || coordenador.trim() === "" || isNaN(nota) || nota < 0 || nota > 10) {
+                    alert("Dados inválidos! Digite novamente.")
+                } 
+                else {
+                    listaProjetos.push(new ProjetoVerde(titulo, coordenador, nota))
+                    alert("Projeto Verde cadastrado!")
+                }
+                break
+
+            case 2:
+                titulo = String(prompt("Título:"))
+                coordenador = String(prompt("Coordenador:"))
+                nota = Number(prompt("Nota (0 a 10):"))
+
+                if (!titulo || titulo.trim() === "" || !coordenador || coordenador.trim() === "" || isNaN(nota) || nota < 0 || nota > 10) {
+                    alert("Dados inválidos! Digite novamente.")
+                } 
+                else {
+                    listaProjetos.push(new ProjetoCultural(titulo, coordenador, nota))
+                    alert("Projeto Cultural cadastrado!")
+                }
+                break
+
+            case 0:
+                alert("Encerrando programa...")
+                executar = false
+                break
+
+            default:
+                alert("Opção inválida!")
+                break
+        }
+    }
+
+    if (listaProjetos.length > 0) {
+        let somaNotas = listaProjetos.reduce((total, p) => total + p.nota, 0)
+        let mediaGeral = somaNotas / listaProjetos.length
+
+        console.log(`Média Geral: ${mediaGeral.toFixed(2)}`)
+        console.log("=== PROJETO(S) ACIMA DA MÉDIA ===")
+
+        for (let projeto of listaProjetos) {
+            if (projeto.nota > mediaGeral) {
+                console.log(`Título: ${projeto.titulo} | Categoria: ${projeto.descricaoCategoria()} | Nota: ${projeto.nota}`)
             }
-            return
         }
-    }
-    class projetoCultural extends Projeto{
-        constructor(titulo:string, coordenador:string, nota:number){
-            super(titulo, coordenador, nota)
-        }
-        public descricaoCategoria():void{
-
-        }
+    } else {
+        console.log("Nenhum projeto foi cadastrado.")
     }
 }

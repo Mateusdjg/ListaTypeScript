@@ -94,6 +94,10 @@ import { exercicio23poo } from "./poo/exercicioO23.js";
 import { exercicio24poo } from "./poo/exercicioO24.js";
 import { exercicio25poo } from "./poo/exercicioO25.js";
 import { exercicio26poo } from "./poo/exercicioO26.js";
+import { exercicio27poo } from "./poo/exercicioO27.js";
+import { exercicio28poo } from "./poo/exercicioO28.js";
+import { exercicio29poo } from "./poo/exercicioO29.js";
+import { exercicio30poo } from "./poo/exercicioO30.js";
 import { exercicio31poo } from "./poo/exercicioO31.js";
 
 
@@ -123,4 +127,8 @@ document.getElementById("btnExP23")?.addEventListener('click', exercicio23poo)
 document.getElementById("btnExP24")?.addEventListener('click', exercicio24poo)
 document.getElementById("btnExP25")?.addEventListener('click', exercicio25poo)
 document.getElementById("btnExP26")?.addEventListener('click', exercicio26poo)
+document.getElementById("btnExP27")?.addEventListener('click', exercicio27poo)
+document.getElementById("btnExP28")?.addEventListener('click', exercicio28poo)
+document.getElementById("btnExP29")?.addEventListener('click', exercicio29poo)
+document.getElementById("btnExP30")?.addEventListener('click', exercicio30poo)
 document.getElementById("btnExP31")?.addEventListener("click", exercicio31poo)

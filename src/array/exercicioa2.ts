@@ -10,7 +10,7 @@ export function exercicioa2():void{
     let numero:number = 0, contador:number = 0, somar:number = 0
     let listaNotas:number[] = []
     while(numero != -1){
-        numero = Number(prompt("Informe um número: "))
+        numero = Number(prompt("Informe um número[-1 para sair]: "))
         if(numero == -1){
             break
         }
