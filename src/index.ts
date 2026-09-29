@@ -99,6 +99,20 @@ import { exercicio28poo } from "./poo/exercicioO28.js";
 import { exercicio29poo } from "./poo/exercicioO29.js";
 import { exercicio30poo } from "./poo/exercicioO30.js";
 import { exercicio31poo } from "./poo/exercicioO31.js";
+import { exercicio32poo } from "./poo/exercicioO32.js";
+import { exercicio33poo } from "./poo/exercicioO33.js";
+import { exercicio34poo } from "./poo/exercicioO34.js";
+import { exercicio35poo } from "./poo/exercicioO35.js";
+import { exercicio36poo } from "./poo/exercicioO36.js";
+import { exercicio37poo } from "./poo/exercicioO37.js";
+import { exercicio38poo } from "./poo/exercicioO38.js";
+import { exercicio39poo } from "./poo/exercicioO39.js";
+import { exercicio40poo } from "./poo/exercicioO40.js";
+import { exercicio41poo } from "./poo/exercicioO41.js";
+import { exercicio42poo } from "./poo/exercicioO42.js";
+import { exercicio43poo } from "./poo/exercicioO43.js";
+import { exercicio44poo } from "./poo/exercicioO44.js";
+import { exercicio45poo } from "./poo/exercicioO45.js";
 
 
 document.getElementById("btnExP1")?.addEventListener("click", exercicio1poo)
@@ -132,3 +146,17 @@ document.getElementById("btnExP28")?.addEventListener('click', exercicio28poo)
 document.getElementById("btnExP29")?.addEventListener('click', exercicio29poo)
 document.getElementById("btnExP30")?.addEventListener('click', exercicio30poo)
 document.getElementById("btnExP31")?.addEventListener("click", exercicio31poo)
+document.getElementById("btnExP32")?.addEventListener("click", exercicio32poo)
+document.getElementById("btnExP33")?.addEventListener("click", exercicio33poo)
+document.getElementById("btnExP34")?.addEventListener("click", exercicio34poo)
+document.getElementById("btnExP35")?.addEventListener("click", exercicio35poo)
+document.getElementById("btnExP36")?.addEventListener("click", exercicio36poo)
+document.getElementById("btnExP37")?.addEventListener("click", exercicio37poo)
+document.getElementById("btnExP38")?.addEventListener("click", exercicio38poo)
+document.getElementById("btnExP39")?.addEventListener("click", exercicio39poo)
+document.getElementById("btnExP40")?.addEventListener("click", exercicio40poo)
+document.getElementById("btnExP41")?.addEventListener("click", exercicio41poo)
+document.getElementById("btnExP42")?.addEventListener("click", exercicio42poo)
+document.getElementById("btnExP43")?.addEventListener("click", exercicio43poo)
+document.getElementById("btnExP44")?.addEventListener("click", exercicio44poo)
+document.getElementById("btnExP45")?.addEventListener("click", exercicio45poo)

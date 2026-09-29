@@ -41,7 +41,7 @@ export function exercicio26poo(): void {
         }
 
         saque(saque: number): boolean {
-            const saqueComTaxa = saque + 2;
+            let saqueComTaxa = saque + 2;
 
             if (saque > 0 && this._saldo >= saqueComTaxa) {
                 this._saldo -= saqueComTaxa;
